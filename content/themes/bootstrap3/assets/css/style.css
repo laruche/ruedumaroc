@@ -1,0 +1,33 @@
+body {
+  background: #eee;
+}
+
+div.container {
+  max-width: 1170px;
+}
+
+div.navbar {
+  background: #fff;
+}
+
+div.navbar li {
+  margin-top: 5px;
+}
+
+div.navbar a {
+  color: #333;
+}
+
+
+main.content {
+  margin-top: 85px;
+}
+
+main.content .jumbotron {
+  background-color : #fff;
+  color: #777777;
+}
+
+main.content .jumbotron a {
+  color: #333;
+}
