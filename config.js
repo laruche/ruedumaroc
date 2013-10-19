@@ -20,13 +20,13 @@ config = {
             }
         },
         database: {
-            client: 'postgres',
+            client: 'mysql',
              connection: {
-              host: 'ec2-54-227-238-25.compute-1.amazonaws.com',
-              user: 'cfdmppbfhmhkur',
-              password: '40YefXV4gu1Ww-_KXR4eaBJbyB',
-              database: 'd92dbaf10k02cj',
-              port: '5432'
+              host: 'us-cdbr-east-04.cleardb.com',
+              user: 'b905130e68b7fd',
+              password: '25a582f1',
+              database: 'heroku_6b9405916998189',
+              charset: 'utf8'
             },
             debug: false
         },
@@ -42,33 +42,35 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://ruedumaroc.herokuapp.com',
-        mail: {
-            transport: 'SMTP',
-            options: {
-                service: 'Mailgun',
-                auth: {
-                    user: 'postmaster@app18771050.mailgun.org',
-                    pass: '8ckwzvg4tel6'
-                 }
-            }
-        },
+        url: 'http://ruedumaroc.com',
+
+        // Example mail config
+        // Visit http://docs.ghost.org/mail for instructions
+        // ```
+        //  mail: {
+        //      transport: 'SMTP',
+        //      options: {
+        //          service: 'Mailgun',
+        //          auth: {
+        //              user: '', // mailgun username
+        //              pass: ''  // mailgun password
+        //          }
+        //      }
+        //  },
+        // ```
+
         database: {
-            client: 'postgres',
-             connection: {
-              host: 'ec2-54-227-238-25.compute-1.amazonaws.com:5432',
-              user: 'cfdmppbfhmhkur',
-              password: '40YefXV4gu1Ww-_KXR4eaBJbyB',
-              database: 'd92dbaf10k02cj',
-              port: '5432'
+            client: 'sqlite3',
+            connection: {
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
             debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '0.0.0.0',
+            host: '127.0.0.1',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: process.env.PORT
+            port: '2368'
         }
     },
 
