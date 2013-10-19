@@ -45,7 +45,16 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://ruedumaroc.herokuapp.com',
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@app18771050.mailgun.org',
+                    pass: '8ckwzvg4tel6'
+                 }
+            }
+        },
         database: {
             client: 'postgres',
              connection: {
@@ -54,7 +63,7 @@ config = {
               password: '40YefXV4gu1Ww-_KXR4eaBJbyB',
               database: 'd92dbaf10k02cj',
               port: '5432'
-            }
+            },
             debug: false
         },
         server: {
