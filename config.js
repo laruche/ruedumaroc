@@ -8,35 +8,33 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://ruedumaroc.com',
-
-        // Example mail config
-        // Visit http://docs.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
-
+        url: 'http://ruedumaroc.herokuapp.com',
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@app18771050.mailgun.org',
+                    pass: '8ckwzvg4tel6'
+                 }
+            }
+        },
         database: {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/ghost-dev.db')
+            client: 'postgres',
+             connection: {
+              host: 'ec2-54-227-238-25.compute-1.amazonaws.com:5432',
+              user: 'cfdmppbfhmhkur',
+              password: '40YefXV4gu1Ww-_KXR4eaBJbyB',
+              database: 'd92dbaf10k02cj',
+              port: '5432'
             },
             debug: false
         },
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.PORT
         }
     },
 
